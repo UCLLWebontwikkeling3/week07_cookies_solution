@@ -8,7 +8,10 @@
 </head>
 <body>
 
-<header><p> <a href="Servlet">Go Home</a></p></header>
+<header>
+    <p><a href="Servlet">Go Home</a></p>
+    <p><a href="Servlet?action=switchLanguage">NL</a></p>
+</header>
 
 <main>
     <article>
@@ -18,6 +21,7 @@
         <p>This site offers you information about countries.
             To make sure you choose your ideal destination.</p>
         <p>
+            <a href="Servlet?action=somethingMore">Read some more stuff</a>.
         </p>
     </article>
 </main>

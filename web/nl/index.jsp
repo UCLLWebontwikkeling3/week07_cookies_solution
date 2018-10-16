@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="nl">
@@ -8,7 +7,10 @@
     <link rel="stylesheet" href="../css/sample.css">
 </head>
 <body>
-<header><p> <a href="Servlet">Ga naar huis</a></p></header>
+<header>
+    <p><a href="Servlet">Ga naar huis</a></p>
+    <p><a href="Servlet?action=switchLanguage">EN</a></p>
+</header>
 
 <main>
     <article>
@@ -18,7 +20,7 @@
         <p>Deze website geeft je informatie over mogelijke bestemmingen. Zo kan je er zeker van zijn
             dat je de juiste keuze maakt. </p>
         <p>
-            <a href="Controller">Country overview</a>
+            <a href="Servlet?action=somethingMore">Lees verder</a>.
         </p>
     </article>
 </main>

@@ -18,11 +18,20 @@ header {
     height: 160px;
     position: relative;
 }
+
 header p a {
     color: #FFF;
     position: absolute;
+    text-decoration: none;
+}
+header p:first-of-type a {
     top: 10px;
     right: 10px;
+}
+
+header p:last-of-type a {
+    top: 10px;
+    left: 10px;
 }
 
 img {
@@ -81,9 +90,9 @@ input[type="text"] {
     font-size: 12px;
     line-height:15px;
     border-radius: 3px;
-    box-shadow: inset 0px 1px 4px #ECECEC;
-    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
-    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+    box-shadow: inset 0 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0 1px 4px #ECECEC;
 }
 
 input[id="votes"] {
