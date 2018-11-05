@@ -25,8 +25,8 @@ public class Controller extends HttpServlet {
         }
         String destination = "menu.jsp";
         switch (command) {
-            case "login":
-                destination = login(request, response);
+            case "setLanguage":
+                destination = setLanguage(request, response);
                 break;
             case "switchLanguage" :
                 destination = switchLanguage(request, response);
@@ -52,19 +52,11 @@ public class Controller extends HttpServlet {
     private String switchLanguage(HttpServletRequest request, HttpServletResponse response) {
         String currentLanguage = getCurrentLanguage(request);
 
-        String newLanguage = "nl";
-        if (currentLanguage.equals("nl")) {
-            newLanguage = "en";
-        }
+        String newLanguage = switchLanguage(currentLanguage);
         Cookie cookie = new Cookie("language", newLanguage);
         response.addCookie(cookie);
 
-        if (currentLanguage.equals("en")) {
-            return "welkom.jsp";
-        }
-        else {
-            return "welcome.jsp";
-        }
+        return getPage(newLanguage);
     }
 
     private String getCurrentLanguage(HttpServletRequest request) {
@@ -76,11 +68,28 @@ public class Controller extends HttpServlet {
         return "nl";
     }
 
-    private String login(HttpServletRequest request, HttpServletResponse response) {
+    private String setLanguage(HttpServletRequest request, HttpServletResponse response) {
         String selectedLanguage = request.getParameter("language");
         Cookie cookie = new Cookie("language", selectedLanguage);
         response.addCookie(cookie);
-        return "welkom.jsp";
+        return getPage(selectedLanguage);
+    }
+
+    private String getPage (String language) {
+        if (language.equals("nl")) {
+            return "welkom.jsp";
+        }
+        else {
+            return "welcome.jsp";
+        }
+    }
+
+    private String switchLanguage (String language) {
+        String newLanguage = "nl";
+        if (language.equals("nl")) {
+            newLanguage = "en";
+        }
+        return newLanguage;
     }
 
 }
