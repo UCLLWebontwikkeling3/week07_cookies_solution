@@ -9,20 +9,17 @@
 </head>
 <body>
 <header>
-    <c:if test="${taal == 'NEDERLANDS'}">
-        <p><a href="Controller?command=switchLanguage">EN</a></p>
-    </c:if>
-    <c:if test="${taal == 'ENGELS'}">
-        <p><a href="Controller?command=switchLanguage">NL</a></p>
-    </c:if>
-
 </header>
 <main>
-    <h1>${taal}</h1>
+    <h1>Uw huidige taalkeuze is ${taal}</h1>
     <article>
-        <form action="Controller?command=login" method="post">
+        <form action="Controller?command=setLanguage" method="post">
             <input type="hidden" name="language" value="nl">
-            <input type="submit" value="Aanmelden">
+            <input type="submit" value="NL">
+        </form>
+        <form action="Controller?command=setLanguage" method="post">
+            <input type="hidden" name="language" value="en">
+            <input type="submit" value="EN">
         </form>
     </article>
 </main>
