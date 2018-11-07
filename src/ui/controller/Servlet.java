@@ -33,7 +33,7 @@ public class Servlet extends HttpServlet {
                 destination = giveLanguage(request) + "somethingMore.jsp";
                 break;
             case "switchLanguage":
-                destination = switchLanguage(request, response);
+                  destination = switchLanguage(request, response);
                 break;
             default:
                 destination = giveLanguage(request) + "index.jsp";
@@ -81,7 +81,7 @@ public class Servlet extends HttpServlet {
             for (Cookie cookie : cookies)
                 if (cookie.getName().equals("language"))
                     return cookie.getValue();
-        return "";
+        return "/";
     }
 
     /**
