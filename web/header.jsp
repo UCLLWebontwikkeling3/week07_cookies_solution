@@ -9,4 +9,5 @@ request.setAttribute("languageToSwitch",giveLanguage(request).equals("nl/")?"EN"
 -->
 <header><p><a href="Servlet">${home}</a></p>
     <p><a href="Servlet?action=switchLanguage">${languageToSwitch}</a></p>
+    ${cookie['language']}
 </header>
